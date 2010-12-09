@@ -15,8 +15,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "nested_fields"
   gem.homepage = "http://github.com/jrmurad/nested_fields"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{Unobtrusive dynamic nested forms}
+  gem.description = %Q{Unobtrusive dynamic nested forms}
   gem.email = "jason@thriess.com"
   gem.authors = ["Jason Murad"]
   # Include your dependencies below. Runtime dependencies are required when using your gem,

@@ -1,0 +1,4 @@
+<%= fields_for "#{@parent_class.name.underscore}[#{@association}_attributes]",
+  @object, :builder => @builder, :index => @index do |f| %>
+    <%= render "#{@association}/fields", :f => f %>
+<% end %>

@@ -1,7 +1,6 @@
 <% content_for :head do %>
   <%= javascript_include_tag 'nested_fields' %>
-  <% @is_ext_js_loaded = true %>
-<% end unless @is_ext_js_loaded %>
+<% end %>
 
 <fieldset>
   <legend><%= association.to_s.titleize %></legend>

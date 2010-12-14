@@ -1,4 +1,8 @@
 module NestedFieldsHelper
+  def nested_fields_js
+    render 'nested_fields/js'
+  end
+
   def nested_fields_for(f, association, nested_partial="#{association}/fields")
     add = add_nested_fields_path :parent_class => f.object.class, :association => association, :builder => f.class
 

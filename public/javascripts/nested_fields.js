@@ -10,8 +10,8 @@ $(function() {
     });
 
     $('.remove_fields').live('click', function() {
-      $(this).closest('ol').find('input[type=hidden]').val('1');
-      $(this).closest('ol').hide();
+      $(this).closest('div.nested_fields').find('input[type=hidden]').val('1');
+      $(this).closest('div.nested_fields').hide();
       return false;
     });
 });

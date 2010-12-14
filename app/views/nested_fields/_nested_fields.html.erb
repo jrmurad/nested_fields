@@ -1,9 +1,16 @@
-<fieldset>
+<fieldset id="<%= association %>" class="nested_fields">
   <legend><%= association.to_s.titleize %></legend>
 
-  <a href="#" class="add_fields" data-url="<%= add_url %>">Add</a>
+  <a href="#" class="add_nested_fields" data-url="<%= add_url %>">Add</a>
 
   <%= f.fields_for association, :builder => f.class do |nested_f| %>
-    <%= render nested_partial, :f => nested_f %>
+    <div class="nested_fields">
+      <%= link_to_remove_fields :nested_f %>
+
+      <div class="nested_fields_inputs">
+        <%= render nested_partial, :f => nested_f %>
+        <%= nested_f.input :_destroy, :as => :hidden %>
+      </div>
+    </div>
   <% end %>
 </fieldset>

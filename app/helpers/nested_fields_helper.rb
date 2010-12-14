@@ -12,7 +12,7 @@ module NestedFieldsHelper
                                           :nested_partial => nested_partial
   end
 
-  def link_to_remove_fields(f)
-    link_to 'Remove', '#', :class => :remove_fields
+  def link_to_remove_fields(f, text='Remove')
+    link_to text, '#', :class => :remove_fields
   end
 end

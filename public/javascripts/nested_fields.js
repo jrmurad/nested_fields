@@ -4,6 +4,7 @@ $(function() {
 
       $.get(link.getAttribute('data-url'), function(content) {
         $(link).after(content);
+        $(link).trigger('nested_fields_ready');
       });
 
       return false;

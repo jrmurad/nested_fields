@@ -5,25 +5,33 @@
 
 Gem::Specification.new do |s|
   s.name = %q{nested_fields}
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jason Murad"]
-  s.date = %q{2010-12-09}
+  s.date = %q{2010-12-15}
   s.description = %q{Unobtrusive dynamic nested forms}
   s.email = %q{jason@thriess.com}
   s.extra_rdoc_files = [
-    "LICENSE.txt",
     "README.rdoc"
   ]
   s.files = [
     ".document",
     "Gemfile",
-    "LICENSE.txt",
+    "Gemfile.lock",
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "app/controllers/nested_fields_controller.rb",
+    "app/helpers/nested_fields_helper.rb",
+    "app/views/nested_fields/_js.html.erb",
+    "app/views/nested_fields/_nested_fields.html.erb",
+    "app/views/nested_fields/add_nested_fields.html.erb",
+    "config/routes.rb",
+    "lib/engine.rb",
     "lib/nested_fields.rb",
+    "nested_fields.gemspec",
+    "public/javascripts/nested_fields.js",
     "test/helper.rb",
     "test/test_nested_fields.rb"
   ]

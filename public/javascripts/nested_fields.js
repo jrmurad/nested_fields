@@ -1,3 +1,9 @@
+$(document).ready(function() {
+  $('.nested_fieldset').each(function(i, nf) {
+    $(nf).trigger('nested_fields_ready');
+  });
+});
+
 $('.add_nested_fields').live('click', function() {
   $.ajax({
     context: this,

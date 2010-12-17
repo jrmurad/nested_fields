@@ -14,21 +14,19 @@ jQuery is required. In the future, this requirement could be removed without muc
 
 == Install
 
-Add nested_fields to your Gemfile and bundle install.
+Add nested_fields to the Gemfile and bundle install.
 
 == Usage
 
-Include 'nested_fields.js' in your layout for the Add and Remove behaviors.
+Include 'nested_fields.js' in the layout for the Add and Remove behaviors.
 
 Use the nested_fields_for helper method.
   <%= nested_fields_for form_builder, :pluralized_association_name, 'path_to/inner_partial' %>
 
-== TODO
+The same type of the form builder argument (e.g. Formtastic, SimpleForm, etc.) will automatically be used for the nested fields.
 
-Document CSS usage
-Document custom event
-Link to example project and provide excerpt
+The <tt>nested_fields_ready</tt> custom event is fired after a nested fieldset is (dynamically or otherwise) added.
 
 == Credits
 
-Very much inspired by madebydna's fork of Ryan Bates' nested_form[https://github.com/ryanb/nested_form] which itself is based on Tim Riley's solution.
+Inspired by Ryan Bates' nested_form[https://github.com/ryanb/nested_form] which itself is based on Tim Riley's solution.

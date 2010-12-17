@@ -9,7 +9,7 @@ class NestedFieldsController < ActionController::Base
     @object = params[:parent_class].constantize.reflect_on_association(@association).klass.new
 
     respond_to do |format|
-      format.js { render 'nested_fields/add_nested_fields' }
+      format.js { render :partial => 'nested_fields/add_nested_fields' }
     end
   end
 end

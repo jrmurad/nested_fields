@@ -1,11 +1,3 @@
-<%= fields_for "#{@parent_class.name.underscore}[#{@association}_attributes]",
-  @object, :builder => @builder, :index => @index do |f| %>
-    <div class="nested_fields">
-      <%= link_to_remove_fields :nested_f %>
-
-      <div class="nested_fields_inputs">
-        <%= render "#{@association}/fields", :f => f %>
-        <%= f.input :_destroy, :as => :hidden %>
-      </div>
-    </div>
+<%= fields_for "#@parent_form[#{@association}_attributes][#@index]", @object, :builder => @builder do |f| %>
+  <%= render 'nested_fields/block', :f => f, :nested_partial => @nested_partial %>
 <% end %>

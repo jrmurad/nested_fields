@@ -1,0 +1,8 @@
+<div class="nested_fields">
+  <a href="#" class="remove_nested_fields">Remove</a>
+
+  <div class="nested_fields_inputs">
+    <%= render nested_partial, :f => f %>
+    <%= f.input :_destroy, :as => :hidden %>
+  </div>
+</div>

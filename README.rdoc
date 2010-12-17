@@ -1,1 +1,34 @@
-jQuery is required.
+= Nested Fields
+
+nested_fields is an Engine designed for generic, dynamic nested forms which may be N>=1 levels deep.
+
+Of what I could find, the existing solutions for dynamic nested forms in Rails are implemented with javascript rather through Controllers. It is my understanding that this is because FormBuilders cannot be passed as params to Controllers.
+
+It does rely on some {parsing behavior}[http://guides.rubyonrails.org/form_helpers.html] within Rails which may or may not be intended for use in this manner.
+
+== Requirements
+
+Designed for Rails 3 applications.
+
+jQuery is required. In the future, this requirement could be removed without much difficulty.
+
+== Install
+
+Add nested_fields to your Gemfile and bundle install.
+
+== Usage
+
+Include 'nested_fields.js' in your layout for the Add and Remove behaviors.
+
+Use the nested_fields_for helper method.
+  <%= nested_fields_for form_builder, :pluralized_association_name, 'path_to/inner_partial' %>
+
+== TODO
+
+Document CSS usage
+Document custom event
+Link to example project and provide excerpt
+
+== Credits
+
+Very much inspired by madebydna's fork of Ryan Bates' nested_form[https://github.com/ryanb/nested_form] which itself is based on Tim Riley's solution.

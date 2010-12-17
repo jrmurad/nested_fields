@@ -4,13 +4,6 @@
   <a href="#" class="add_nested_fields" data-url="<%= add_url %>">Add</a>
 
   <%= f.fields_for association, :builder => f.class do |nested_f| %>
-    <div class="nested_fields">
-      <%= link_to_remove_fields :nested_f %>
-
-      <div class="nested_fields_inputs">
-        <%= render nested_partial, :f => nested_f %>
-        <%= nested_f.input :_destroy, :as => :hidden %>
-      </div>
-    </div>
+    <%= render 'nested_fields/block', :f => nested_f, :nested_partial => nested_partial %>
   <% end %>
 </fieldset>

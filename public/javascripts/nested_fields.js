@@ -22,3 +22,9 @@ $('.remove_nested_fields').live('click', function() {
   $(this).closest('div.nested_fields').hide();
   return false;
 });
+
+$('.nested_fields_has_one').live('change', function() {
+  var hidden_field = $(this).closest('.nested_fieldset').find('.destroy_nested_one');
+  $(hidden_field).val($(hidden_field).val() == 'true' ? 'false' : 'true');
+  $(this).closest('.nested_fieldset').find('.nested_one').toggle();
+});

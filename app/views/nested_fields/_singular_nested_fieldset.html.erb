@@ -1,0 +1,16 @@
+<fieldset id="<%= association %>" class="nested_fieldset">
+  <legend><%= association.to_s.titleize %></legend>
+
+  <%= f.fields_for association, associate, :builder => f.class do |nested_f| %>
+    <label class="nested_one_label">
+      <%= check_box_tag "has_#{association}", nil, !local_assigns[:has_zero], :class => :nested_fields_has_one %>
+      <%= "Has #{association.to_s.titleize}?" %>
+    </label>
+
+    <%= nested_f.hidden_field :_destroy, :class => :destroy_nested_one, :value => local_assigns[:has_zero] ? 'true' : 'false' %>
+
+    <%= content_tag :div, :class => :nested_one, :style => ('display:none' if local_assigns[:has_zero]) do %>
+      <%= render nested_partial, :f => nested_f %>
+    <% end %>
+  <% end %>
+</fieldset>

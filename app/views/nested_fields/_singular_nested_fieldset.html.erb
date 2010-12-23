@@ -1,4 +1,4 @@
-<fieldset id="<%= association %>" class="nested_fieldset">
+<fieldset class="nested_fieldset">
   <legend><%= association.to_s.titleize %></legend>
 
   <%= f.fields_for association, associate, :builder => f.class do |nested_f| %>

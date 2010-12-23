@@ -1,5 +1,5 @@
 module NestedFieldsHelper
-  def nested_fields_for(f, association, nested_partial=nil)
+  def nested_fields_for(f, association, nested_partial=nil, options={})
     reflection = f.object.class.reflect_on_association(association)
     is_has_one = reflection.macro == :has_one
     nested_partial ||= "#{is_has_one ? association.to_s.pluralize : association}/fields"
@@ -17,6 +17,8 @@ module NestedFieldsHelper
               :association => association,
               :f => f,
               :nested_partial => nested_partial}
+
+    locals.merge!(options)
 
     if is_has_one
       associate = f.object.send(association);

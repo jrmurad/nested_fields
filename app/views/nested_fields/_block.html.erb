@@ -1,8 +1,8 @@
-<div class="nested_fields">
+<%= content_tag :div, :class => :nested_fields, :style => ('display:none' if f.object._destroy) do %>
   <a href="#" class="remove_nested_fields">Remove</a>
 
   <div class="nested_fields_inputs">
     <%= render nested_partial, :f => f %>
     <%= f.hidden_field :_destroy %>
   </div>
-</div>
+<% end %>

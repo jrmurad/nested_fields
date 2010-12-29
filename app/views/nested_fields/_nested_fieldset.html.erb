@@ -1,4 +1,8 @@
-<fieldset class="nested_fieldset" data-positioned-by="<%= local_assigns[:positioned_by] %>">
+<% if local_assigns[:positioned_by] %>
+  <fieldset class="nested_fieldset positioned" data-positioned-by="<%= positioned_by %>">
+<% else %>
+  <fieldset class="nested_fieldset">
+<% end %>
   <legend><%= association.to_s.titleize %></legend>
 
   <a href="#" class="add_nested_fields" data-url="<%= add_url %>">Add</a>

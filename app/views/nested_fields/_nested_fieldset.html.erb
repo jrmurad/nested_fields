@@ -3,7 +3,7 @@
 <% else %>
   <fieldset class="nested_fieldset">
 <% end %>
-  <legend><%= association.to_s.titleize %></legend>
+  <legend><%= local_assigns[:legend] || association.to_s.titleize %></legend>
 
   <a href="#" class="add_nested_fields" data-url="<%= add_url %>">Add</a>
 

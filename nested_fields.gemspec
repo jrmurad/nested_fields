@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{nested_fields}
-  s.version = "0.2.0"
+  s.version = "0.2.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jason Murad"]
-  s.date = %q{2010-12-21}
+  s.date = %q{2011-01-22}
   s.description = %q{Unobtrusive dynamic nested forms}
   s.email = %q{jason@thriess.com}
   s.extra_rdoc_files = [

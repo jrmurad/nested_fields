@@ -5,6 +5,8 @@
 <% end %>
   <legend><%= local_assigns[:legend] || association.to_s.titleize %></legend>
 
+  <%= yield %>
+
   <a href="#" class="add_nested_fields" data-url="<%= add_url %>">Add</a>
 
   <%= f.fields_for association, :builder => f.class do |nested_f| %>

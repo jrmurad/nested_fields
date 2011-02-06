@@ -1,4 +1,4 @@
-<fieldset class="nested_fieldset">
+<fieldset class="nested_fieldset <%= association %>">
   <legend><%= local_assigns[:legend] || association.to_s.titleize %></legend>
 
   <%= yield %>

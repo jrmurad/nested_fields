@@ -1,7 +1,7 @@
 <% if local_assigns[:positioned_by] %>
-  <fieldset class="nested_fieldset positioned" data-positioned-by="<%= positioned_by %>">
+  <fieldset class="nested_fieldset positioned <%= association %>" data-positioned-by="<%= positioned_by %>">
 <% else %>
-  <fieldset class="nested_fieldset">
+  <fieldset class="nested_fieldset <%= association %>">
 <% end %>
   <legend><%= local_assigns[:legend] || association.to_s.titleize %></legend>
 

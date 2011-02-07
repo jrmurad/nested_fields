@@ -6,10 +6,14 @@ class NestedFieldsController < ActionController::Base
     @nested_partial = params[:nested_partial]
     @parent_form = params[:parent_form]
 
-    @object = params[:parent_class].constantize.reflect_on_association(@association).klass.new
+    parent_class = params[:parent_class].constantize
+
+    @objects = params[:copy_parent_id] ?
+               parent_class.find(params[:copy_parent_id]).send(@association).reverse :
+               Array.new(1, parent_class.reflect_on_association(@association).klass.new)
 
     respond_to do |format|
-      format.js { render :partial => 'nested_fields/add_nested_fields' }
+      format.js { render :partial => 'nested_fields/add_nested_fields', :collection => @objects, :as => :object }
     end
   end
 end

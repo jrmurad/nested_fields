@@ -1,3 +1,4 @@
-<%= fields_for "#@parent_form[#{@association}_attributes][#@index]", @object, :builder => @builder do |f| %>
+<%= fields_for "#@parent_form[#{@association}_attributes][#@index#{object_counter}]",
+               object, :builder => @builder do |f| %>
   <%= render 'nested_fields/block', :f => f, :nested_partial => @nested_partial %>
 <% end %>

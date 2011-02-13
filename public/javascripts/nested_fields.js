@@ -7,6 +7,7 @@ $(document).ready(function() {
 $('.add_nested_fields').live('click', function() {
   $.ajax({
     context: this,
+    dataType: 'html',
     url: this.getAttribute('data-url'),
     success: function(content) {
       $(this).after(content);

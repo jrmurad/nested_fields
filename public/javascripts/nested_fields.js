@@ -36,7 +36,7 @@ function reposition(nested_fieldset, pos_fld) {
   });
 }
 
-$('.nested_fieldset').live('nested_fields_ready', function() {
+$('fieldset.positioned').live('nested_fields_ready', function() {
   var pos_fld = this.getAttribute('data-positioned-by');
 
   if (pos_fld) {

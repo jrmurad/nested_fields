@@ -2,7 +2,10 @@
   <a href="#" class="remove_nested_fields">Remove</a>
 
   <div class="nested_fields_inputs">
-    <%= render nested_partial, :f => f %>
-    <%= f.hidden_field :_destroy %>
+    <%= render :partial => nested_partial,
+               :object => f.object,
+               :as => f.object.class.name.underscore.to_sym,
+               :locals => {:f => f} %>
+    <%= f.hidden_field :_destroy, :class => :nested_fields_destroy %>
   </div>
 <% end %>

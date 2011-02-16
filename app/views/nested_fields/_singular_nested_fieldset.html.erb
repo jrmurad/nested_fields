@@ -9,10 +9,13 @@
       Has <%= association.to_s.titleize %>?
     </label>
 
-    <%= nested_f.hidden_field :_destroy, :class => :destroy_nested_one, :value => local_assigns[:has_zero] ? 'true' : 'false' %>
+    <%= nested_f.hidden_field :_destroy, :class => :destroy_nested_one, :value => local_assigns[:has_zero] %>
 
     <%= content_tag :div, :class => :nested_one, :style => ('display:none' if local_assigns[:has_zero]) do %>
-      <%= render nested_partial, :f => nested_f %>
+      <%= render :partial => nested_partial,
+                :object => nested_f.object,
+                :as => nested_f.object.class.name.underscore.to_sym,
+                :locals => {:f => nested_f} %>
     <% end %>
   <% end %>
 </fieldset>

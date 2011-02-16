@@ -8,6 +8,12 @@ It relies on some {parsing behavior}[http://guides.rubyonrails.org/form_helpers.
 
 It handles both +has_many+ and +has_one+ relationships. For +has_one+, it will allow 0..1 nested associates.
 
+screenshot[http://i.imgur.com/uoJvo.png]
+
+== Example
+
+Access {demonstration code}[https://github.com/jrmurad/nested_fields-example].
+
 == Requirements
 
 Rails 3, jQuery
@@ -72,10 +78,6 @@ A javascript function is provided which sets the values of existing (non-removed
 === Triggers
 
 The +nested_fields_changed+ custom event is fired by a nested associate's div after being dynamically added/removed.
-
-== Example
-
-Access {demonstration code}[https://github.com/jrmurad/nested_fields-example].
 
 == Credits
 
